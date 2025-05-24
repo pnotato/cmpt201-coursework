@@ -1,0 +1,17 @@
+#define _GNU_SOURCE
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+  char *line = NULL;
+  size_t len = 0;
+  ssize_t nread;
+
+  printf("Enter some text seperated by spaces");
+  nread = getline(&line, &len, stdin);
+
+  free(line);
+  
+  printf("%zd", nread);
+}
